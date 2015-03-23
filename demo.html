@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="" />
+		<title></title>
+		<style>
+			.gauge-item {
+				height: 120px;
+				width: 120px;
+				float: left;
+				margin: 5px;
+			}
+		</style>
+		<script type="text/javascript" src="raphael.js" ></script>
+		<script type="text/javascript" src="raphael.group.js" ></script>
+		<script type="text/javascript" src="gauge.js" ></script>
+	</head>
+	<body>
+		<div id="gauge1" class="gauge-item"></div>
+		<div id="gauge2" class="gauge-item"></div>
+		<div id="gauge3" class="gauge-item"></div>
+	</body>
+	
+	<script>
+	function buildGauge(options) {
+		var gauge = new Gauge({
+			container: options.container,
+			title: options.title,
+			unit: options.unit,
+			width: 120,
+			height: 120,
+			radius: 60,
+			maxValue: options.maxValue,
+			minValue: options.minValue,
+			value: options.value,
+	
+			redFrom: 0,
+			redTo: 70,
+	
+			yellowFrom: 70,
+			yelloTo: 180,
+	
+			greenFrom: 180,
+			greenTo: 240,
+	
+			onclick: function() {
+				alert('OK')
+			}
+		})
+	
+		gauge.draw();
+	}
+	
+	buildGauge({container: 'gauge1', title: '平均公文处理时长', unit: '小时', maxValue: 240, minValue: 0, value: 100});
+	
+	buildGauge({container: 'gauge2', title: '平均公文处理时长2', unit: '小时', maxValue: 1000, minValue: 0, value: 100});
+	
+	buildGauge({container: 'gauge3', title: '平均公文处理时长4', unit: '小时', maxValue: 400, minValue: 0, value: 100});
+	
+	//buildGauge({container: 'gauge1', title: '平均公文处理时长', unit: '小时', maxValue: 240, minValue: 0, value: 100});
+	</script>
+</html>
