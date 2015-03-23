@@ -51,9 +51,9 @@
 		
 		this.unit = this.options.unit || '';
 		this.title = this.options.title || '';
-		this.maxValue = this.options.maxValue || 240;
-		this.minValue = this.options.minValue || 0;
-		this.value = this.options.value || 60;
+		this.maxValue = this.options.maxValue;
+		this.minValue = this.options.minValue;
+		this.value = this.options.value;
 		
 		this.cx = this.options.width / 2;
 		this.cy = this.options.height / 2;
