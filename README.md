@@ -17,8 +17,8 @@ var gauge = new Gauge({
 	width: 120,
 	height: 120,
 	radius: 60,
-	maxValue: options.maxValue,
-	minValue: options.minValue,
+	maxValue: 240,
+	minValue: 0,
 	value: 80,
 
 	greenFrom: 0,
