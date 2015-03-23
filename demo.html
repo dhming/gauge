@@ -34,29 +34,27 @@
 			minValue: options.minValue,
 			value: options.value,
 	
-			redFrom: 0,
-			redTo: 70,
+			greenFrom: options.greenFrom || 0,
+			greenTo: options.greenTo || 70,
 	
-			yellowFrom: 70,
-			yelloTo: 180,
+			yellowFrom: options.yellowFrom || 70,
+			yelloTo: options.yelloTo || 180,
 	
-			greenFrom: 180,
-			greenTo: 240,
+			redFrom: options.redFrom || 180,
+			redTo: options.redTo || 240,
 	
-			onclick: function() {
-				alert('OK')
+			onclick: function(opt) {
+				alert(opt.title)
 			}
 		})
 	
 		gauge.draw();
 	}
 	
-	buildGauge({container: 'gauge1', title: '平均公文处理时长', unit: '小时', maxValue: 240, minValue: 0, value: 100});
+	buildGauge({container: 'gauge1', title: '最大速度', unit: 'KM/H', maxValue: 240, minValue: 0, value: 100, greenFrom: .01, greenTo: 80, yellowFrom: 80, yellowTo: 120, redFrom: 120, redTo: 240});
 	
-	buildGauge({container: 'gauge2', title: '平均公文处理时长2', unit: '小时', maxValue: 1000, minValue: 0, value: 100});
+	buildGauge({container: 'gauge2', title: '会议(起草数量)', unit: '次', maxValue: 1000, minValue: 0, value: 100});
 	
-	buildGauge({container: 'gauge3', title: '平均公文处理时长4', unit: '小时', maxValue: 400, minValue: 0, value: 100});
-	
-	//buildGauge({container: 'gauge1', title: '平均公文处理时长', unit: '小时', maxValue: 240, minValue: 0, value: 100});
+	buildGauge({container: 'gauge3', title: '平均公文处理时长', unit: '小时', maxValue: 400, minValue: 0, value: 100});
 	</script>
 </html>

@@ -176,7 +176,7 @@
 				.mouseover(function(){
 					 this.attr({'fill': 'red'});
 				})
-				.mouseout(function(){
+				.mouseout(function(){ 
 					this.attr({'fill': '#333'});
 				})
 				.click(function() {
